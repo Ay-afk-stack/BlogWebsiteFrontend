@@ -9,7 +9,9 @@ const EditBlog = () => {
   const [data, setData] = useState({});
 
   const fetchBlog = async () => {
-    const response = await axios.get(`http://localhost:3000/blog/${id}`);
+    const response = await axios.get(
+      `https://blogwebsitebackend-31vj.onrender.com/blog/${id}`
+    );
     if (response.status === 200) {
       setData({
         title: response.data.data.title,
@@ -32,7 +34,7 @@ const EditBlog = () => {
   const editBlog = async (e) => {
     e.preventDefault();
     const response = await axios.patch(
-      `http://localhost:3000/blog/${id}`,
+      `https://blogwebsitebackend-31vj.onrender.com/blog/${id}`,
       data,
       {
         headers: {

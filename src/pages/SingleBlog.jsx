@@ -9,13 +9,17 @@ const SingleBlog = () => {
   const { id } = useParams();
   console.log(id);
   const fetchSingleBlog = async () => {
-    const response = await axios.get(`http://localhost:3000/blog/${id}`);
+    const response = await axios.get(
+      `https://blogwebsitebackend-31vj.onrender.com/blog/${id}`
+    );
     setSingleBlog(response.data.data);
   };
   console.log(singleBlog);
 
   const deleteBlog = async () => {
-    const response = await axios.delete(`http://localhost:3000/blog/${id}`);
+    const response = await axios.delete(
+      `https://blogwebsitebackend-31vj.onrender.com/blog/${id}`
+    );
     console.log(response.status);
     if (response.status === 200) {
       alert("Deleted Successfully!");
