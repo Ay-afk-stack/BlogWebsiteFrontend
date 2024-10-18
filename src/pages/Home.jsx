@@ -8,7 +8,7 @@ const Home = () => {
 
   const fetchBlogs = async () => {
     const response = await axios.get(
-      "https://blog-website-orpin-psi.vercel.app/blog/"
+      "https://blogwebsitebackend-31vj.onrender.com/blog/"
     );
     setBlogs(response.data.data);
   };
